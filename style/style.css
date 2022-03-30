@@ -8,6 +8,7 @@
   --hover-color-links: #2196f3;
   --background-color-dgrey: #2f303a;
   --background-color-lgrey: #f5f4fa;
+  --bottom-border-color-ltgrey: #ececec;
 }
 
 /* глобальные стили */
@@ -17,7 +18,17 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
-
+/* шапка */
+header {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bottom-border-color-ltgrey);
+}
 /* логотип */
 header .logo,
 footer .logo {
@@ -36,13 +47,23 @@ footer .logo span {
 }
 
 /* верхняя навигация */
+header nav {
+  display: flex;
+  flex-direction: row;
+}
 header .top-right-nav,
 header .top-left-nav {
   font-weight: 500;
   list-style: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
 }
+header .top-right-nav {
+  padding-left: 45px;
+}
+
 header .top-right-nav li > a:hover,
 header .top-left-nav li > a:hover,
 header .top-right-nav li > a:focus,
@@ -52,12 +73,19 @@ header .top-left-nav li > a:focus {
 header .top-left-nav li > a {
   color: var(--main-color-subtitle);
 }
+header .top-right-nav li,
+header .top-left-nav li {
+  padding-left: 50px;
+}
 
 /* баннер */
+.section {
+  padding-bottom: 94px;
+}
 main .content {
   background-color: var(--background-color-dgrey);
-  width: 1600px;
-  height: 600px;
+  text-align: center;
+  margin-bottom: 94px;
 }
 main .content h1 {
   font-weight: 900;
@@ -84,12 +112,25 @@ main .content button {
 }
 
 /* особенности */
+.wrapp-quality {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.quality {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.quality li {
+  width: 270px;
+}
 .hide {
   display: none;
 }
 .quality,
 .aboutwork ul,
-.ourteam ul,
+.wrapp-ourteam ul,
 section .main-nav,
 .portfolio {
   list-style: none;
@@ -99,6 +140,7 @@ section .main-nav,
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1.14;
+  margin-bottom: 10px;
 }
 .quality li > p {
   color: var(--main-color-subtitle);
@@ -106,34 +148,72 @@ section .main-nav,
 }
 
 /* чем мы занимаемся */
-.aboutwork h2,
-.ourteam h2 {
+.wrapp-aboutwork {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapp-aboutwork ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wrapp-aboutwork h2,
+.wrapp-ourteam h2 {
   font-weight: 700;
   font-size: 36px;
   text-align: center;
   line-height: 1.16;
+  margin-bottom: 50px;
 }
 
 /* наша команда */
 .ourteam {
   background-color: var(--background-color-lgrey);
+  padding: 94px 0;
 }
-.ourteam li > h3 {
+.wrapp-ourteam {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapp-ourteam ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wrapp-ourteam ul li > img {
+  display: block;
+}
+.wrapp-ourteam ul li {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.wrapp-ourteam .subtitle h3 {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
+  padding-bottom: 10px;
 }
-.ourteam ul li > p {
+.wrapp-ourteam .subtitle p {
   font-size: 16px;
   color: var(--main-color-subtitle);
   line-height: 1.18;
 }
-
+.wrapp-ourteam .subtitle {
+  text-align: center;
+  padding: 30px 0;
+}
 /* подвал */
 footer {
-  width: 1600px;
-  height: 252px;
   background-color: var(--background-color-dgrey);
+}
+.wrapp-footer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 footer .logo,
 footer a {
@@ -145,6 +225,7 @@ footer address ul {
   line-height: 1.8;
   font-style: normal;
   line-height: 1.71;
+  margin-top: 20px;
 }
 .footer-links li:nth-last-of-type(-n + 2) a {
   color: var(--main-color-subtitle);
@@ -156,16 +237,34 @@ footer address ul {
 
 /* ----  СТРАНИЦА ПОРТФОЛИО ---- */
 
+.container {
+  max-width: 1195px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
+  box-sizing: border-box;
+  padding: 94px 0;
+}
+
 /* главная навигация - портфолио */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
 main a {
   text-decoration: none;
   color: var(--main-color-links);
+}
+section .main-nav li:nth-child(2n + 1) {
+  margin: 0 8px;
 }
 section .main-nav li > button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  padding: 10px;
+  padding: 6px 27px;
   text-align: center;
   background: #f5f4fa;
   border-radius: 4px;
@@ -182,15 +281,32 @@ section .main-nav li > button:focus {
 }
 
 /* портфолио */
-
-.portfolio li a > h2 {
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.portfolio li:nth-child(-n + 6) {
+  padding-bottom: 30px;
+}
+.portfolio li a > img {
+  display: block;
+}
+.portfolio .sup h2 {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.portfolio li a > p {
+.portfolio li .sup p > a {
   font-size: 16px;
   line-height: 1.8;
   color: var(--main-color-subtitle);
+}
+.portfolio .sup {
+  box-sizing: border-box;
+  padding: 20px 24px;
+  border: 1px solid var(--bottom-border-color-ltgrey);
+  border-top: none;
 }
