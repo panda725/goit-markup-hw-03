@@ -5,11 +5,12 @@
   --link-hover-color: #2196f3;
   --subtitle-color: #757575;
   --border-color: #ececec;
+  --border-portfolio-color: #eeeeee;
   --hero-bg-color: #2f303a;
   --hero-button-color: #188ce8;
   --filter-button-bgcolor: #f5f4fa;
   --backgroun-ourteam-section: #f5f4fa;
-  --ourteam-bgcolor: F5F4FA;
+  --ourteam-bgcolor: #f5f4fa;
   --footer-link-color: rgba(255, 255, 255, 0.6);
 }
 /* body */
@@ -40,7 +41,8 @@ ul {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .page-header {
   border-bottom: 1px solid var(--border-color);
@@ -182,6 +184,7 @@ ul {
 
 /* section feature */
 
+/* !!! HIDE -как скрыть- */
 .hide {
   visibility: hidden;
 }
@@ -246,7 +249,7 @@ ul {
 
 .job-descr-item img,
 .team-list img,
-.card-items img {
+.card-link > img {
   display: block;
 }
 
@@ -339,6 +342,13 @@ ul {
 
 /* PAGE PORTFOLIO */
 
+.wrapp-btn {
+  display: flex;
+  margin-bottom: 34px;
+}
+.filters {
+  display: flex;
+}
 .filters .button-item {
   font-weight: 500;
   font-size: 16px;
@@ -353,18 +363,20 @@ ul {
   border-radius: 4px;
   border-style: none;
 }
-
-/* section cards */
-
-.card-link {
-  text-decoration: none;
+.filters .item + .item {
+  margin-left: 8px;
 }
-
 .filters .button-item:hover {
   color: var(--second-color-text);
   background-color: var(--link-hover-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* section cards */
+
+.card-link {
+  text-decoration: none;
 }
 
 .card-items .card-title {
@@ -388,4 +400,26 @@ ul {
 
 .block-cards {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.block-cards .card-items {
+  width: 370px;
+  /* width: calc((100%-60px) / 3); */
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.card-items:nth-child(3n) {
+  margin-right: 0;
+}
+.card-items:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.block-cards .wrapper-title {
+  padding: 20px 24px;
+
+  background: var(--second-color-text);
+  border: 1px solid var(--border-portfolio-color);
 }
