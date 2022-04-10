@@ -190,7 +190,7 @@ ul {
 }
 
 .feature-list .item {
-  width: 270px;
+  width: calc((100% - 90px) / 4);
   margin-right: 30px;
 }
 
@@ -236,6 +236,7 @@ ul {
 }
 
 .job-descr-item {
+  width: calc((100%-60px) / 3);
   margin-right: 30px;
 }
 
@@ -256,13 +257,13 @@ ul {
 }
 
 .team-list {
-  width: 270px;
   display: flex;
 
   text-align: center;
 }
 
 .team-list .team-item {
+  width: calc((100%-90px) / 4);
   margin-right: 30px;
 
   background: var(--second-color-text);
@@ -345,12 +346,15 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-color-text);
+  cursor: pointer;
   background-color: var(--filter-button-bgcolor);
 
   padding: 6px 22px;
   border-radius: 4px;
   border-style: none;
 }
+
+/* section cards */
 
 .card-link {
   text-decoration: none;
@@ -380,4 +384,8 @@ ul {
   line-height: 1.8;
   letter-spacing: 0.03em;
   color: var(--subtitle-color);
+}
+
+.block-cards {
+  display: flex;
 }
